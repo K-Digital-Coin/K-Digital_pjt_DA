@@ -1,6 +1,6 @@
 K-Digital_pjt_DA
 ================
-Bitcoin Price Forecast Analysis / 
+Bitcoin Price Forecast Analysis  
 (1) Find Python Modules
 ----------------
 > 1. Sklearn
