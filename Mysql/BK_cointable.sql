@@ -1,12 +1,13 @@
 use coinproject; # 테이블 만들기 위한 DB 선택
 SELECT * FROM coinproject.historycoin;
+# 230223 writed
+# DROP TABLE hc_bb;
+#SELECT * FROM coinproject.historycoin;
+#update historycoin set low_price=31500000,
+#                       trade_price=31583000,
+#                       candle_acc_trade_volume=285.11359423
+#				   where idx = 20000;
 
-# 볼린저 밴드 테이블
-CREATE TABLE hc_bb (
-	candle_date_time_kst DATETIME,
-    bb DOUBLE,
-	PRIMARY KEY(candle_date_time_kst)
-)ENGINE=MYISAM CHARSET=utf8;
 # 15hour 이평선 테이블
 CREATE TABLE hc_ma (
 	candle_date_time_kst DATETIME,
@@ -25,7 +26,14 @@ CREATE TABLE hc_macd (
     macd DOUBLE,
 	PRIMARY KEY(candle_date_time_kst)
 )ENGINE=MYISAM CHARSET=utf8;
-
+# 볼린저 밴드 테이블
+CREATE TABLE hc_bb (
+	candle_date_time_kst DATETIME,
+    bbp DOUBLE,
+    bbc DOUBLE,
+    bbm DOUBLE,
+	PRIMARY KEY(candle_date_time_kst)
+)ENGINE=MYISAM CHARSET=utf8;
 #CREATE TABLE bk_cointable (
 #	seq	INT NOT NULL AUTO_INCREMENT,
 #    candel_date_time DATETIME,
