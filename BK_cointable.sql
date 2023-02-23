@@ -1,16 +1,43 @@
 use coinproject; # 테이블 만들기 위한 DB 선택
-CREATE TABLE bk_cointable (
-	seq	INT NOT NULL AUTO_INCREMENT,
-    candel_date_time DATETIME,
-    bk_open INT,
-    bk_high INT,
-    bk_low INT,
-    bk_close INT,
-    bk_volume FLOAT,
-    ma_c5d INT,
-    macd INT,
-    rsi FLOAT,
-    bb_p FLOAT,
-    bb_m FLOAT,
-    PRIMARY KEY(seq)
-)ENGINE=MYISAM CHARSET=utf8;#engine = mysql에서 사용하는 엔진 / charset 데이터의 캐릭터세트
+SELECT * FROM coinproject.historycoin;
+
+# 볼린저 밴드 테이블
+CREATE TABLE hc_bb (
+	candle_date_time_kst DATETIME,
+    bb DOUBLE,
+	PRIMARY KEY(candle_date_time_kst)
+)ENGINE=MYISAM CHARSET=utf8;
+# 15hour 이평선 테이블
+CREATE TABLE hc_ma (
+	candle_date_time_kst DATETIME,
+    ma DOUBLE,
+	PRIMARY KEY(candle_date_time_kst)
+)ENGINE=MYISAM CHARSET=utf8;
+# RSI 테이블
+CREATE TABLE hc_rsi (
+	candle_date_time_kst DATETIME,
+    rsi DOUBLE,
+	PRIMARY KEY(candle_date_time_kst)
+)ENGINE=MYISAM CHARSET=utf8;
+# MACD 밴드 테이블
+CREATE TABLE hc_macd (
+	candle_date_time_kst DATETIME,
+    macd DOUBLE,
+	PRIMARY KEY(candle_date_time_kst)
+)ENGINE=MYISAM CHARSET=utf8;
+
+#CREATE TABLE bk_cointable (
+#	seq	INT NOT NULL AUTO_INCREMENT,
+#    candel_date_time DATETIME,
+#    bk_open INT,
+#    bk_high INT,
+#    bk_low INT,
+#    bk_close INT,
+#    bk_volume FLOAT,
+#    ma_c5d INT,
+#    macd INT,
+#    rsi FLOAT,
+#    bb_p FLOAT,
+#    bb_m FLOAT,
+#	PRIMARY KEY(seq)
+#)ENGINE=MYISAM CHARSET=utf8;#engine = mysql에서 사용하는 엔진 / charset 데이터의 캐릭터세트
