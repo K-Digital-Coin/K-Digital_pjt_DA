@@ -3,15 +3,15 @@ import pandas as pd
 import pymysql
 
 # 코인 데이터 요청해서 df에 저장
-df = pyupbit.get_ohlcv("KRW-BTC", interval="minute60", to='20230219', count=20624, period=0.1)
+df = pyupbit.get_ohlcv("KRW-BTC", interval="minute60", to='20230221', count=20220, period=0.1)
 # index로 있는 date_time을 column에 추가
 df['candel_date_time'] = df.index
 # index를 번호로 지정
-index_list = list(range(1, 20625))
+index_list = list(range(1, 20221))
 df.index = index_list
 # df의 value 열을 삭제
 df = df.drop(['value'], axis='columns')
-df.to_csv('./dummyData/dummydata_1.csv', index=False)
+df.to_csv('./dummyData/dummydata.csv', index=False)
 print(df)
 print(df.info())
 
