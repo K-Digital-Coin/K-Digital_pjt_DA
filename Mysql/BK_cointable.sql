@@ -1,5 +1,6 @@
-use coinproject; # 테이블 만들기 위한 DB 선택
+use musthave; # 테이블 만들기 위한 DB 선택
 SELECT * FROM coinproject.historycoin;
+SELECT * FROM hc_bb;
 # 230223 writed
 # DROP TABLE hc_bb;
 #SELECT * FROM coinproject.historycoin;
@@ -20,7 +21,7 @@ CREATE TABLE hc_rsi (
     rsi DOUBLE,
 	PRIMARY KEY(candle_date_time_kst)
 )ENGINE=MYISAM CHARSET=utf8;
-# MACD 밴드 테이블
+# MACD 테이블
 CREATE TABLE hc_macd (
 	candle_date_time_kst DATETIME,
     macd DOUBLE,
@@ -34,6 +35,8 @@ CREATE TABLE hc_bb (
     bbm DOUBLE,
 	PRIMARY KEY(candle_date_time_kst)
 )ENGINE=MYISAM CHARSET=utf8;
+
+#참조
 #CREATE TABLE bk_cointable (
 #	seq	INT NOT NULL AUTO_INCREMENT,
 #    candel_date_time DATETIME,
@@ -49,3 +52,17 @@ CREATE TABLE hc_bb (
 #    bb_m FLOAT,
 #	PRIMARY KEY(seq)
 #)ENGINE=MYISAM CHARSET=utf8;#engine = mysql에서 사용하는 엔진 / charset 데이터의 캐릭터세트
+
+#use musthave;
+#drop table board;
+#select * from board;
+#create table member (
+#	id varchar(10) not null,
+#    pass varchar(10) not null,
+#    name varchar(30) not null,
+#    regidate timestamp default current_timestamp not null,
+#    primary key (id)
+#);
+#select * from member;
+#select * from board;
+#SELECT B.*, M.name  FROM member M INNER JOIN board B  ON M.id=B.id  WHERE num=105;
