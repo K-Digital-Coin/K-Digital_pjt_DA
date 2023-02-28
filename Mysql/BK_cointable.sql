@@ -1,4 +1,4 @@
-use musthave; # 테이블 만들기 위한 DB 선택
+use coinproject; # 테이블 만들기 위한 DB 선택
 SELECT * FROM coinproject.historycoin;
 SELECT * FROM hc_bb;
 # 230223 writed
@@ -11,30 +11,35 @@ SELECT * FROM hc_bb;
 
 # 15hour 이평선 테이블
 CREATE TABLE hc_ma (
+    idx INT NOT NULL AUTO_INCREMENT,
 	candle_date_time_kst DATETIME,
     ma DOUBLE,
-	PRIMARY KEY(candle_date_time_kst)
+	PRIMARY KEY(idx)
 )ENGINE=MYISAM CHARSET=utf8;
 # RSI 테이블
 CREATE TABLE hc_rsi (
+	idx INT NOT NULL AUTO_INCREMENT,
 	candle_date_time_kst DATETIME,
     rsi DOUBLE,
-	PRIMARY KEY(candle_date_time_kst)
+	PRIMARY KEY(idx)
 )ENGINE=MYISAM CHARSET=utf8;
 # MACD 테이블
 CREATE TABLE hc_macd (
+	idx INT NOT NULL AUTO_INCREMENT,
 	candle_date_time_kst DATETIME,
     macd DOUBLE,
-	PRIMARY KEY(candle_date_time_kst)
+	PRIMARY KEY(idx)
 )ENGINE=MYISAM CHARSET=utf8;
 # 볼린저 밴드 테이블
 CREATE TABLE hc_bb (
+	idx INT NOT NULL AUTO_INCREMENT,
 	candle_date_time_kst DATETIME,
     bbp DOUBLE,
     bbc DOUBLE,
     bbm DOUBLE,
-	PRIMARY KEY(candle_date_time_kst)
+	PRIMARY KEY(idx)
 )ENGINE=MYISAM CHARSET=utf8;
+drop table hc_rsi;
 
 #참조
 #CREATE TABLE bk_cointable (
