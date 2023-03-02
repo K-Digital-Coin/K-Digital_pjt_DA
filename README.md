@@ -1,16 +1,19 @@
 K-Digital_pjt_DA
 ================
 Bitcoin Price Forecast Analysis  
-(1) Find Python Modules
+(1) Used Python Modules
 ----------------
-> 1. Sklearn
-> 2. XGBoost
+> 1. prophet
+> 2. Sklearn
 > 3. Keras
 
-(1) Find Python Models
+(2) Used Python Models
 ----------------------
-> 1. ARIMA
-> 2. Prophat
+> 1. Prophat
+> 2. Linear Regression
 > 3. LSTM
-> 4. Random Forest
-> 5. CNN + LSTM
+
+(2) Used Dataset
+----------------------
+> 1. 1-hour units price data
+> 2. 1-hour units indicator data 
