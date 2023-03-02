@@ -13,7 +13,7 @@ Bitcoin Price Forecast Analysis
 > 2. Linear Regression
 > 3. LSTM
 
-(2) Used Dataset
+(3) Used Dataset
 ----------------------
 > 1. 1-hour units price data
 > 2. 1-hour units indicator data 
